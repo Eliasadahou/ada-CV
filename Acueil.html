@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Animation
+        </title>
+    </head>
+    <style>
+       *,::before,::after{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+       }
+       body{
+        font-family: Montsrrat,Arial, Helvetica, sans-serif;
+  background-color: bisque;
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+       }
+       html body{
+        height: 100%;
+       }
+       .ani{
+        max-width: 1600px;
+        margin: 100px auto 0;
+        padding: 0 50px;
+       }
+       p{
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #222;
+        color: transparent;
+        font-size: 50px;
+
+       }
+       p span{
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        font-size: clamp(20px,8vm,120px);
+       }
+       p span::after{
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        
+       }
+       p:nth-child(1){
+        font-weight: 300;
+        animation: txt-appearance 5s 1s forwards;
+       }
+       p:nth-child(2){
+        animation: txt-appearance 5s 1.25s forwards;
+       }
+       p:nth-child(1) span::after{
+        animation: slide-in 0.75s ease-out forwards,slide-out 3s 1s ease-out forwards;
+        background: salmon;
+       }
+       p:nth-child(2) span::after{
+        background: rgb(52, 82, 107);
+        animation: slide-in 0.75s 0.3s ease-out forwards,slide-out 3s 1.3s ease-out forwards;
+       }
+
+       @keyframes slide-in{
+        100%{
+            transform: translateX(0%);
+        }
+       }
+
+       @keyframes slide-out{
+        100%{
+            transform: translateX(100%);
+        }
+       }
+       @keyframes txt-appearance{
+        100%{
+            color: #222;
+        }
+       }
+       .but{
+        float:right;
+        display: block;
+        height: 30px;
+        margin-top: 50px;
+        border:1px solid transparent ;
+        background-color: black;
+        border-radius: 20px;
+       }
+       a{
+        text-decoration: none;
+        font-size: 20px;
+        color: aliceblue;
+        border-radius: 20px;
+       }
+       a:hover{
+        background-color: rgb(93, 95, 95);
+        border-radius: 20px;
+       }
+    </style>
+    <body>
+        <header>
+
+        </header>
+        <center>
+        <div class="ani">
+            <p>
+                <span> BIENVENIR SUR LE CV EN LIGNE</span>
+            </p>
+            <p>
+                <span> DE Elias ADAHOU.</span>
+
+            </p>
+        </div>
+    </center>
+    <button class="but" type="button"><a href="CV_de_Elias.html"> Ouvrire</a> </button>
+    </body>
+</html>
